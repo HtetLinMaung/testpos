@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  testpos:
+    image: htetlinmaung/testpos
+    build: .
+    ports:
+      - "80:3000"
+    environment:
+      - DB_CONNECTION=postgres://hlm:P@ssword@20.211.96.165:5433/testposdb
+  # postgres:
+  #   image: postgres:alpine3.14
+  #   ports:
+  #     - "5433:5432"
+  #   environment:
+  #     - POSTGRES_DB=postgres
+  #     - POSTGRES_PASSWORD=P@ssword
+  #   volumes:
+  #     - postgresdb:/var/lib/postgresql/data
+
+volumes:
+  postgresdb:
